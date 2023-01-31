@@ -85,6 +85,7 @@ else. At Listella we care about clean, correct, safe, and efficient code.
 * (NASAs API Website navigate to Mars Rover Photos)[[https://api.nasa.gov/index.html](https://api.nasa.gov/index.html)] 
 * (NextJS)[[https://nextjs.org/](https://nextjs.org/)]
 * Figma designs [[https://www.figma.com/file/ascD0ddGr0Ax2EXo256qyJ/NASA?node-id=0%3A1&t=XZtItwkJ0G4eHYMc-1](https://www.figma.com/file/ascD0ddGr0Ax2EXo256qyJ/NASA?node-id=0%3A1&t=XZtItwkJ0G4eHYMc-1)] password: 123lizard
+    Exported assets from the figma design file can be found inside of the assets folder.
 
 ### Submission
 

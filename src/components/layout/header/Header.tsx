@@ -36,7 +36,6 @@ export default function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  console.log(EarthIcon);
 
   return (
     <AppBar

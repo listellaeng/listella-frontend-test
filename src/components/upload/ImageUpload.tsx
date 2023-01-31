@@ -26,13 +26,10 @@ const ImageUpload = () => {
         // Do whatever you want with the file contents
         const binaryStr = reader.result;
         setImagesToUpload((prev) => [...prev, binaryStr]);
-        console.log(binaryStr);
       };
       reader.readAsArrayBuffer(file);
     });
   }, []);
-
-  console.log(UploadIcon);
 
   const { getRootProps, getInputProps } = useDropzone({
     maxFiles: 5,

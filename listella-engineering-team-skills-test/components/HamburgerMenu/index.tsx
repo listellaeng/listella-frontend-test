@@ -18,25 +18,36 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({}) => {
         'bg-white rounded-md': isOpen,
       })}
     >
-      <Image
-        src={`/assets/${isOpen ? 'close' : 'menu'}.svg`}
-        width={25}
-        height={25}
-        alt="menu"
-        className="hover:cursor-pointer"
-        onClick={handleHamburgerClick}
-      />
-      {isOpen && (
-        <ul className="absolute z-50 top-8 right-0 flex flex-col items-center justify-between border rounded-md p-4">
+      {isOpen ? (
+        <ul className="absolute z-50 -top-4 right-0 flex flex-col items-center justify-between border rounded-md p-4 bg-white">
+          <li className="self-end">
+            <Image
+              src="/assets/close.svg"
+              width={25}
+              height={25}
+              alt="menu"
+              className="hover:cursor-pointer"
+              onClick={handleHamburgerClick}
+            />
+          </li>
           {MENU_ITEMS.map((menuItem) => (
             <li
               key={menuItem.label}
-              className="border-b-2 border-gray-300 w-=35 mb-1 w-full"
+              className="border-b-2 border-gray-300 w-35 mb-1 w-full"
             >
               <Link href={menuItem.href}>{menuItem.label}</Link>
             </li>
           ))}
         </ul>
+      ) : (
+        <Image
+          src="/assets/menu.svg"
+          width={25}
+          height={25}
+          alt="menu"
+          className="hover:cursor-pointer"
+          onClick={handleHamburgerClick}
+        />
       )}
     </div>
   );

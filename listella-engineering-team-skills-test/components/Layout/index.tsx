@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { FC, ReactNode } from 'react';
+import Header from '../Header';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -15,7 +16,8 @@ const Layout: FC<LayoutProps> = ({ children, title = 'NASA' }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="">{children}</main>
+      <Header />
+      <main className="p-8">{children}</main>
     </>
   );
 };

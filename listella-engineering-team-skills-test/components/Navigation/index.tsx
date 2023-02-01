@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { NAV_ITEMS, NavItem } from './nav-items';
 
 export interface NavigationProps {
-  navItems: Array<NavItem>;
+  navItems?: Array<NavItem>;
 }
 
 const Navigation: FC<NavigationProps> = ({ navItems = NAV_ITEMS }) => {

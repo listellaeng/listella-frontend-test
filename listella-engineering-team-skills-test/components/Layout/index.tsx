@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { FC, ReactNode } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
+import SubNav from '../SubNav';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -18,7 +19,12 @@ const Layout: FC<LayoutProps> = ({ children, title = 'NASA' }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="p-8 min-h-screen">{children}</main>
+      <main className="p-16 min-h-screen relative">
+        <>
+          <SubNav />
+          {children}
+        </>
+      </main>
       <Footer />
     </>
   );

@@ -9,8 +9,8 @@ interface FooterProps {
 
 const Footer: FC<FooterProps> = ({ footerItems = FOOTER_ITEMS }) => {
   return (
-    <div className="w-full bg-blue-800 text-white px-8 py-4 absolute bottom-0 flex items-center justify-between">
-      <ul className="flex items-center justify-start">
+    <div className="w-full bg-blue-800 text-white px-8 py-4 sticky bottom-0 flex flex-wrap items-center justify-between">
+      <ul className="flex flex-wrap items-center justify-start">
         {footerItems.map((footerItem) => (
           <li key={footerItem.label} className="mr-8">
             <Link href={footerItem.href}>{footerItem.label}</Link>

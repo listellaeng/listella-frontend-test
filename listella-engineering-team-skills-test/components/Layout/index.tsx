@@ -18,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children, title = 'NASA' }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="p-8">{children}</main>
+      <main className="p-8 min-h-screen">{children}</main>
       <Footer />
     </>
   );

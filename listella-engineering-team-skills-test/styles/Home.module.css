@@ -1,8 +1,15 @@
 .HomePageLayout {
-  @apply grid;
-  grid-template-areas:
-    'TopSectionLeft TopSectionRight'
-    'BottomSection';
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  @apply grid grid-cols-1 h-screen gap-y-4;
+}
+
+.HomePageLayout__bottomSection {
+  @apply bg-no-repeat col-span-2 bg-top bg-cover;
+  background-image: url('/assets/moon.jpg');
+}
+
+@screen sm {
+  .HomePageLayout {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }

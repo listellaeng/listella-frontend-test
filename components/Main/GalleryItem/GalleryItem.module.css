@@ -1,0 +1,10 @@
+.galleryText {
+	color: #6B6B6B;
+	font-size: 26px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.galleryText span {
+	color: #000;
+}

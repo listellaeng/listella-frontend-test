@@ -1,0 +1,44 @@
+.logoContainer {
+	padding-top: 37px;
+	padding-bottom: 10px;
+}
+
+.logoText {
+	font-weight: 300;
+	font-size: 64px;
+	line-height: 87px;
+	margin-bottom: 0;
+	margin-left: 75px;
+}
+
+.navbar {
+	background-color: white !important;
+	border-bottom: 5px solid #F0F0F0;
+	width: 90%;
+}
+
+.navItems a {
+	color: #000;
+	margin-right: 60px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.navItems a:nth-last-child(1) {
+	margin-right: 0;
+}
+
+.headerOptions {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.headerOptions img {
+	margin-left: 56px;
+}
+
+@media (max-width: 768px) {
+	.navItems a {
+		margin-right: 0;
+	}
+}

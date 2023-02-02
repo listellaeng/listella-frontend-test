@@ -1,0 +1,43 @@
+.uploadFileContainer {
+	margin-top: 78px;
+	background-color: #000;
+	height: 860px;
+	background-size: cover;
+}
+
+.uploadFilesCard {
+	width: 100%;
+	max-width: 790px;
+	padding: 28px 40px;
+	display: flex;
+	flex-direction: column;
+}
+
+.uploadText {
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 12px;
+	margin-bottom: 0;
+	line-height: 27.24px;
+}
+
+.uploadContainer {
+	padding: 5px;
+	border: 2px solid #4D54FF;
+	border-radius: 30px;
+	align-self: center;
+	width: 100%;
+	max-width: 500px;
+	margin-top: 53px;
+}
+
+.upload {
+	background-color: #fff !important;
+	color: #4D54FF !important;
+	border: 2px dashed #4D54FF;
+	border-radius: 30px;
+	font-size: 24px;
+	font-weight: 500;
+	height: 107px;
+	width: 100%;
+}

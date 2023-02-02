@@ -14,13 +14,13 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({}) => {
 
   return (
     <div
-      className={cx('relative whitespace-nowrap', {
+      className={cx('relative', {
         'bg-white rounded-md': isOpen,
       })}
     >
       {isOpen ? (
-        <ul className="absolute z-50 -top-4 right-0 flex flex-col items-center justify-between border rounded-md p-4 bg-white">
-          <li className="self-end">
+        <ul className="absolute z-50 -top-4 right-0 flex flex-col items-center justify-between border rounded-md p-4 bg-white  whitespace-nowrap">
+          <li className="self-end mx-4 my-2">
             <Image
               src="/assets/close.svg"
               width={25}
@@ -33,7 +33,7 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({}) => {
           {MENU_ITEMS.map((menuItem) => (
             <li
               key={menuItem.label}
-              className="border-b-2 border-gray-300 w-35 mb-1 w-full"
+              className="border-b border-gray-200 w-50 mb-1 w-full  mx-4 my-2"
             >
               <Link href={menuItem.href}>{menuItem.label}</Link>
             </li>

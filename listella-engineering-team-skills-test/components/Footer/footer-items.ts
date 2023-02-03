@@ -6,22 +6,22 @@ export type FooterItem = {
 export const FOOTER_ITEMS = [
   {
     label: 'Contact US',
-    href: 'contact-us',
+    href: '/contact-us',
   },
   {
     label: 'About US',
-    href: 'about-us',
+    href: '/about-us',
   },
   {
     label: 'Privacy Policy',
-    href: 'privacy-policy',
+    href: '/privacy-policy',
   },
   {
     label: 'Sitemap',
-    href: 'sitemap',
+    href: '/sitemap',
   },
   {
     label: 'Terms & Conditions',
-    href: 'terms-and-conditions',
+    href: '/terms-and-conditions',
   },
 ];

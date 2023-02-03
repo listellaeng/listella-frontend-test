@@ -34,6 +34,6 @@ export const MENU_ITEMS = [
   },
   {
     label: 'Benefits to You',
-    href: '/benefits to You',
+    href: '/benefits-to=-you',
   },
 ];

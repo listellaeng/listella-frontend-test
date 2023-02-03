@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import cx from 'classnames';
 import Link from 'next/link';
+import { GetServerSideProps } from 'next';
+import { getMediaAssetManifest, searchNASA } from '@/services/nasa-api';
 
 const Home = () => {
   return (
@@ -57,6 +59,19 @@ const Home = () => {
       </div>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const nasaSearchResponse = await searchNASA({ q: 'apollo 11' });
+  const data = await nasaSearchResponse.json();
+
+  const assetResp = await getMediaAssetManifest('as11-40-5874');
+  const assetData = await assetResp.json();
+
+  console.log(assetData);
+  return {
+    props: {},
+  };
 };
 
 export default Home;

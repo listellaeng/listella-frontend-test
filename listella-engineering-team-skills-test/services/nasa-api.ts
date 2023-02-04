@@ -4,7 +4,9 @@ const DFEAULT_HEADERS = {
   'Content-Type': 'application/json',
 };
 
-export const searchNASA = async (queryParams: Record<string, string>) => {
+export const searchNASA = async (
+  queryParams: Record<string, Partial<string>>
+) => {
   const params = new URLSearchParams(queryParams).toString();
 
   const response = await fetch(`${apiRoot}/search?${params}`, {

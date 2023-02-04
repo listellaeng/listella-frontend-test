@@ -1,22 +1,34 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import { FileWithPath, useDropzone } from 'react-dropzone';
-import { useAtom } from 'jotai';
-import { uploadFilesAtom } from '@/atoms/uploadFiles.atom';
+import { FileWithPath } from 'react-dropzone';
+import { useUploadFile } from './hooks/useUploadFiles';
+import cx from 'classnames';
 
 const UploadFile = () => {
-  const [uploadFiles, setUploadFiles] = useAtom(uploadFilesAtom);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
-    disabled: isDisabled,
-    maxFiles: 5,
-  });
+  const {
+    uploadFiles,
+    isDisabled,
+    getRootProps,
+    getInputProps,
+    apiResponse,
+    setApiResponse,
+    setUploadFiles,
+  } = useUploadFile();
 
-  const files = acceptedFiles.map((file: FileWithPath) => (
+  const files = uploadFiles.map((file: FileWithPath) => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
     </li>
   ));
+
+  const handleUploadClick = async () => {
+    try {
+      const uploaded = await fetch('/api/upload', { method: 'POST' });
+      setApiResponse('Selected Files Uploaded Successfully');
+      setUploadFiles([]);
+    } catch (err: any) {
+      setApiResponse(err.message);
+    }
+  };
 
   return (
     <section className="mx-auto p-16 my-32 bg-white max-w-2xl rounded-xl">
@@ -30,11 +42,24 @@ const UploadFile = () => {
       </p>
       <div
         {...getRootProps({
-          className:
-            'mx-8 my-4 p-1 border border-blue-500 rounded-xl hover:cursor-pointer',
+          className: cx(
+            'mx-8 my-4 p-1 border rounded-xl hover:cursor-pointer',
+            {
+              'border-gray-500': isDisabled,
+              'border-blue-500': !isDisabled,
+            }
+          ),
         })}
       >
-        <div className="flex items-center justify-center border-2 rounded-xl border-dotted border-blue-500 py-4 px-6 ">
+        <div
+          className={cx(
+            'flex items-center justify-center border-2 rounded-xl border-dotted border-blue-500 py-4 px-6 ',
+            {
+              'border-gray-500': isDisabled,
+              'border-blue-500': !isDisabled,
+            }
+          )}
+        >
           <input {...getInputProps()} />
           <Image
             src={`/assets/${isDisabled ? 'upload-gray' : 'upload'}.svg`}
@@ -43,7 +68,14 @@ const UploadFile = () => {
             alt="upload"
             className="mr-4"
           />
-          <p className="text-blue-500">Drag &amp; Drop Your Images</p>
+          <p
+            className={cx({
+              'text-gray-500': isDisabled,
+              'text-blue-500': !isDisabled,
+            })}
+          >
+            Drag &amp; Drop Your Images
+          </p>
         </div>
       </div>
 
@@ -51,8 +83,16 @@ const UploadFile = () => {
         <>
           <h4 className="font-semibold">Accepted files</h4>
           <ul>{files}</ul>
+          <button
+            className="border border-blue-300 text-blue-600 p-2 rounded-xl my-4"
+            onClick={handleUploadClick}
+          >
+            {' '}
+            Upload Files
+          </button>
         </>
       ) : null}
+      <p>{apiResponse}</p>
     </section>
   );
 };

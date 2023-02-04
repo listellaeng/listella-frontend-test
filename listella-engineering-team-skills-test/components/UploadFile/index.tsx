@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { FileWithPath, useDropzone } from 'react-dropzone';
+import { useAtom } from 'jotai';
+import { uploadFilesAtom } from '@/atoms/uploadFiles.atom';
 
 const UploadFile = () => {
+  const [uploadFiles, setUploadFiles] = useAtom(uploadFilesAtom);
   const [isDisabled, setIsDisabled] = useState(false);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     disabled: isDisabled,

@@ -10,12 +10,14 @@ import {
   TNASAApiResponse,
   TAlbumNASAResponse,
 } from '@/services/nasa-api.types';
+import Thumbnail from '@/components/Thumbnail';
 
 interface HomePageProps {
   albumData: TNASAApiResponse<TAlbumNASAResponse> | TNASAApiErrorResponse;
 }
 
-const Home: NextPage<HomePageProps> = () => {
+const Home: NextPage<HomePageProps> = ({ albumData }) => {
+  const album = 'collection' in albumData ? albumData : null;
   return (
     <Layout title="NASA home page">
       <div className={styles.HomePageLayout}>
@@ -31,6 +33,7 @@ const Home: NextPage<HomePageProps> = () => {
             width={320}
             height={460}
             className="w-full rounded-xl"
+            priority
           />
         </div>
         <div className="pr-16 flex flex-col items-start justify-start border border-t-0 drop-shadow-md rounded-xl p-8 my-4 mr-16">
@@ -57,7 +60,11 @@ const Home: NextPage<HomePageProps> = () => {
           </p>
           <h3 className="font-semibold text-3xl pt-4">Featured Images</h3>
           <p className="text-blue-600">Scroll to see more</p>
-          <div></div>
+          <div className="w-full flex overflow-x-scroll max-h-32 mb-4">
+            {album?.collection?.items?.map((album) => (
+              <Thumbnail {...album} key={album.data[0].nasa_id} />
+            )) || <p>There is currently no recent featured photos.</p>}
+          </div>
           <Link href="/gallery" className="font-bold self-end">
             View Gallery &gt;
           </Link>

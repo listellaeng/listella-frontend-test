@@ -4,15 +4,15 @@ import styles from '../styles/Home.module.css';
 import cx from 'classnames';
 import Link from 'next/link';
 import { GetServerSideProps, NextPage } from 'next';
-import { searchNASA } from '@/services/nasa-api';
+import { getMediaAlbumContents } from '@/services/nasa-api';
 import {
   TNASAApiErrorResponse,
   TNASAApiResponse,
-  TSearchNASAResponse,
+  TAlbumNASAResponse,
 } from '@/services/nasa-api.types';
 
 interface HomePageProps {
-  searchData: TNASAApiResponse<TSearchNASAResponse> | TNASAApiErrorResponse;
+  albumData: TNASAApiResponse<TAlbumNASAResponse> | TNASAApiErrorResponse;
 }
 
 const Home: NextPage<HomePageProps> = () => {
@@ -70,12 +70,12 @@ const Home: NextPage<HomePageProps> = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const searchData = await searchNASA({ q: 'apollo 11' });
+export const getServerSideProps: GetServerSideProps = async () => {
+  const albumData = await getMediaAlbumContents('201907_Apollo_50th_in_DC');
 
   return {
     props: {
-      searchData,
+      albumData,
     },
   };
 };

@@ -33,3 +33,24 @@ export type TSearchNASAResponse = {
   >;
   links?: Array<TNASALink>;
 };
+
+export type TAlbumNASAResponse = {
+  href: string;
+  data: Array<{
+    album: Array<string>;
+    center: string;
+    title: string;
+    photographer: string;
+    location: string;
+    nasa_id: string;
+    media_type: string;
+    keywords: Array<string>;
+    date_created: string;
+    description: string;
+  }>;
+  links: Array<{
+    href: string;
+    rel: string;
+    render: string;
+  }>;
+};

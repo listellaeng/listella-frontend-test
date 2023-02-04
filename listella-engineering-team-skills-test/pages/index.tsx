@@ -11,6 +11,7 @@ import {
   TAlbumNASAResponse,
 } from '@/services/nasa-api.types';
 import Thumbnail from '@/components/Thumbnail';
+import UploadFile from '@/components/UploadFile';
 
 interface HomePageProps {
   albumData: TNASAApiResponse<TAlbumNASAResponse> | TNASAApiErrorResponse;
@@ -69,9 +70,9 @@ const Home: NextPage<HomePageProps> = ({ albumData }) => {
             View Gallery &gt;
           </Link>
         </div>
-        <div
-          className={cx('h-full', styles.HomePageLayout__bottomSection)}
-        ></div>
+        <div className={cx('h-full', styles.HomePageLayout__bottomSection)}>
+          <UploadFile />
+        </div>
       </div>
     </Layout>
   );

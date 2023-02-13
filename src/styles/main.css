@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto Sans&display=swap');
+
+/* can now reference my font */
+body {
+  font-family: Noto Sans;
+}
+
+/* my custom css */
+
+.right-container {
+    box-shadow: 0px .5rem .5rem rgba(0, 0, 0, 0.25);
+    border-radius: 1.25rem;
+    padding: 2rem;
+}
+
+.image-scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0rem;
+  }
+  
+  .image-scroll-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    height: 208px;
+    overflow-x: scroll;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .galleries-bottom-container {
+    position: relative;
+    padding: 0;
+    margin-top: 78px;
+    height: 860px;
+    overflow: hidden;
+  }
+
+  .custom-dot {
+    height: .5rem;
+    width: .5rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+.h4 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.75rem;
+}
+.h5 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.p2 {
+    font-size: 1.5rem;
+}
+
+.underline:hover {
+    border-bottom: 2px solid #ACFFFF;
+}
+
+.gallery-underline {
+  margin-right: 1.5rem;
+  margin-bottom: .25rem;
+}
+
+.gallery-underline:hover {
+    border-bottom: .125rem solid rgba(0, 0, 0, 0.37);
+}
+
+input[type=file] {
+    opacity: 0;
+}
+
+.custom-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background-color: red;
+  /* justify-content: center; */
+}
+
+@media screen and (min-width: 1600px) {
+  .custom-container {
+    grid-template-columns: 400px 400px;
+
+  }
+}
+
+.logo-nasa-title {
+  font-size: 4rem;
+  font-weight: 300; 
+  margin-left: 1rem;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+.subheader-a {
+  border-bottom: .063rem solid #EFEFEF;
+  text-align: left;
+  padding-left: 0;
+}
+
+.subheader-dropdown-menu {
+  right: 0;
+  padding-right: 1rem; 
+  padding-left: 1rem;
+}
+
+.btn {
+  border: 0;
+}
+
+.scrolling-image-container {
+  position: relative;
+}
+
+.hover-container {
+  position: absolute;
+  top: 0;
+  color: white;
+  height: 208px;
+  width: 240px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  word-wrap: break-word;
+  padding: .35rem;
+}
+
+.hover-font {
+  font-size: .5rem;
+}

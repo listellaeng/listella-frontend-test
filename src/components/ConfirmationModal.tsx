@@ -26,7 +26,6 @@ export const ConfirmationModal = ({ images, type, onClose }: ConfirmationProps) 
                             <p>You uploaded {images?.[0].length} images.</p>
                             <ul>
                                 {images?.[0].map((image, index) => {
-                                    console.log(image)
                                     return <li key={index}>{image.name}</li>
                                 })}
                             </ul>

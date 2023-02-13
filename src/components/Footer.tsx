@@ -14,7 +14,7 @@ export const Footer = () => {
             <div className="container-fluid">
                 <ul className="nav">
                     {
-                        linkItems.map((item, index) => {
+                        linkItems?.map((item, index) => {
                             return (
                                 <li key={index} className="nav-item">
                                     <a className="nav-link link-light" aria-current="page" href="#">{item.title}</a>

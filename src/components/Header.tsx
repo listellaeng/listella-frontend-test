@@ -19,7 +19,7 @@ export const Header = () => {
                 >
                     <ul className="navbar-nav mx-auto">
                         {
-                            navItems.map((item, index) => {
+                            navItems?.map((item, index) => {
                                 return (
                                     <li key={index} className="nav-item" style={{ marginRight: "2rem" }}>
                                         <Link className=" link-dark underline" href={item.link} style={{ textDecoration: "none", color: color.Black }}>

@@ -29,7 +29,7 @@ export const SubHeader = () => {
                                 <button className="btn" type="button" onClick={() => setIsOpen(!isOpen)}><img src={`/assets/${isOpen ? "close" : "menu"}.svg`} /></button>
                                 { isOpen && <div className="dropdown-menu subheader-dropdown-menu" style={{ display: isOpen ? "block" : "none" }}>
                                     {
-                                        dropdownItems.map((item, index) => {
+                                        dropdownItems?.map((item, index) => {
                                             return <a key={index} className="dropdown-item subheader-a" href={item.link}>{item.title}</a>
                                         })
                                     }

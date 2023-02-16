@@ -2,23 +2,25 @@ import { createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: "#556cd6",
     },
     secondary: {
-      main: "#19857b",
+      main: "#4D54FF",
     },
     error: {
       main: red.A400,
     },
   },
   typography: {
-    fontSize: 24,
-    allVariants: {
-      fontFamily: "Noto Sans",
-    },
+    fontFamily: "Noto Sans",
+  },
+});
+theme = createTheme(theme, {
+  typography: {
+    fontSize: "24px",
     h1: {
       fontWeight: 300,
       fontSize: "64px",
@@ -29,19 +31,19 @@ const theme = createTheme({
       fontSize: "32px",
       lineHeight: "43.58px",
     },
-    body1:{
+    body1: {
       fontWeight: 400,
-      color: "#000"
+      color: "#000",
     },
     subtitle1: {
+      fontSize: "24px",
       fontWeight: 500,
       lineHeight: "33px",
-      color: "#4D54FF",
+      color: theme.palette.secondary.main,
     },
     button: {
       fontWeight: 700,
     },
   },
-
 });
 export default theme;

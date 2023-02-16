@@ -1,24 +1,16 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import ButtonBase from "@mui/material/ButtonBase";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import InputBase from "@mui/material/InputBase";
 import Close from "/public/icons/close.svg";
 import MenuIcon from "/public/icons/menu.svg";
 import SearchIcon from "/public/icons/search.svg";
-// import SearchIcon from "/public/icons/search.svg";
-
-
-
+import ShareIcon from "/public/icons/share.svg";
 
 import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import Close from "@mui/icons-material/Close";
 import { styled, alpha } from "@mui/material/styles";
-// import ShareIcon from "@mui/icons-material/Share";
-import path from 'path'
-import getConfig from 'next/config'
 
 
 const menuItems = [
@@ -40,6 +32,8 @@ const secondaryMenuItems = [
   "History",
   "Benefits to You"
 ];
+
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,6 +58,7 @@ const MainNavDivider = styled("div")(({ theme }) => ({
   display: "flex",
   height: 4
 }));
+
 export const MainNavigation = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -85,9 +80,9 @@ export const MainNavigation = () => {
         }}
       >
         {menuItems.map((item, i) => (
-          <Button key={`mainMenu_${i}`} onClick={handleClick}>
+          <ButtonBase key={`mainMenu_${i}`} onClick={handleClick} className="main-nav">
             {item}
-          </Button>
+          </ButtonBase>
         ))}
       </Box>
       <MainNavDivider />
@@ -127,7 +122,7 @@ export const SecondaryNavigation = () => {
         aria-label="share"
         sx={{ mr: 2 }}
       >
-        {/* <ShareIcon /> */}
+        <ShareIcon />
       </IconButton>
 
       <IconButton
@@ -174,7 +169,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",

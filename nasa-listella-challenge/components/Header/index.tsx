@@ -1,10 +1,7 @@
-import React from "react";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 import { MainNavigation, SecondaryNavigation } from "../Navigation";
-import Image from "next/image";
 import Earth from "/public/icons/earth.svg";
 
 const TitleBanner = () => (

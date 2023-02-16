@@ -1,7 +1,7 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  --font-mono: 'Noto Sans',ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
@@ -85,16 +85,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -105,3 +95,76 @@ a {
     color-scheme: dark;
   }
 }
+
+.main-nav.MuiButtonBase-root {
+  display: inline-block;
+  position: relative;
+  /* color: #0087ca; */
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0 2rem;
+}
+
+.main-nav.MuiButtonBase-root::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #ACFFFF;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.main-nav.MuiButtonBase-root:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.dropzone-holder {
+  width: 510px;
+  margin: auto;
+  box-sizing: border-box;
+  position: relative;
+  border-style: solid;
+  border-width:2px;
+  border-color: #4D54FF;
+  border-radius: 30px;
+  padding:3em;
+  display: flex;
+  justify-content: center;
+  background-image: url("/icons/upload.svg");
+  background-repeat: no-repeat;
+  background-position: 10% center;
+}
+
+.dropzone-holder:before {
+  content: " ";
+  position: absolute;
+  box-sizing: border-box;
+  left: 0.98%;
+  right: 0.98%;
+  top: 4.27%;
+  bottom: 4.27%;
+  border-style: dashed;
+  border-width:2px;
+  border-color: #4D54FF;
+  border-radius: 30px;
+}
+
+.dropzone-holder:hover {
+  border-color: #8A8BA4;
+  background-image: url("/icons/upload-gray.svg");
+  color: #8A8BA4;
+}
+.dropzone-holder:hover .dropzone-text {
+  color: #8A8BA4;
+}
+
+.dropzone-holder:hover:before {
+  border-color: #8A8BA4;
+}
+
